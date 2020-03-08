@@ -633,6 +633,12 @@
           </con:restRequest>
         </con:config>
       </con:testStep>
+      <con:testStep type="groovy" name="Groovy Script" id="8740e1fa-8b0a-4a4f-be14-ea98333aa1a0">
+        <con:settings/>
+        <con:config>
+          <script/>
+        </con:config>
+      </con:testStep>
       <con:properties/>
     </con:testCase>
     <con:properties/>
