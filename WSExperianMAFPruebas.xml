@@ -1,0 +1,196 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2461f43e-4d1b-4fac-be64-97f05336bfdd" activeEnvironment="Default" name="WSExperianMAFPruebas" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="f266371c-e004-4ad6-bcc5-c39176fbce88" wsaVersion="NONE" name="BasicHttpBinding_IExperian" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IExperian" soapVersion="1_1" anonymous="optional" definition="http://localhost/MAF.SGC.Service.Experian/Experian.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="http://localhost/MAF.SGC.Service.Experian/Experian.svc?wsdl">
+      <con:part>
+        <con:url>http://localhost/MAF.SGC.Service.Experian/Experian.svc?wsdl</con:url>
+        <con:content><![CDATA[<wsdl:definitions name="Experian" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost/MAF.SGC.Service.Experian/Experian.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://localhost/MAF.SGC.Service.Experian/Experian.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://localhost/MAF.SGC.Service.Experian/Experian.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MAF.SGC.Service.Experian.Models"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IExperian_ConsultaDecisor_InputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaDecisor"/>
+  </wsdl:message>
+  <wsdl:message name="IExperian_ConsultaDecisor_OutputMessage">
+    <wsdl:part name="parameters" element="tns:ConsultaDecisorResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IExperian">
+    <wsdl:operation name="ConsultaDecisor">
+      <wsdl:input wsaw:Action="http://tempuri.org/IExperian/ConsultaDecisor" message="tns:IExperian_ConsultaDecisor_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IExperian/ConsultaDecisorResponse" message="tns:IExperian_ConsultaDecisor_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IExperian" type="tns:IExperian">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="ConsultaDecisor">
+      <soap:operation soapAction="http://tempuri.org/IExperian/ConsultaDecisor" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="Experian">
+    <wsdl:port name="BasicHttpBinding_IExperian" binding="tns:BasicHttpBinding_IExperian">
+      <soap:address location="http://localhost/MAF.SGC.Service.Experian/Experian.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content>
+        <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+      </con:part>
+      <con:part>
+        <con:url>http://localhost/MAF.SGC.Service.Experian/Experian.svc?xsd=xsd0</con:url>
+        <con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="http://localhost/MAF.SGC.Service.Experian/Experian.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MAF.SGC.Service.Experian.Models"/>
+  <xs:element name="ConsultaDecisor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="tipoDocumento" type="xs:int"/>
+        <xs:element minOccurs="0" name="numeroDocumento" type="xs:int"/>
+        <xs:element minOccurs="0" name="primerApellido" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="edad" type="xs:int"/>
+        <xs:element minOccurs="0" name="numeroPersonasCargo" type="xs:int"/>
+        <xs:element minOccurs="0" name="actividadEconomica" type="xs:int"/>
+        <xs:element minOccurs="0" name="ubicacionResidencial" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="departamento" type="xs:int"/>
+        <xs:element minOccurs="0" name="montoSolicitado" type="xs:decimal"/>
+        <xs:element minOccurs="0" name="plazo" type="xs:int"/>
+        <xs:element minOccurs="0" name="valorVehiculo" type="xs:decimal"/>
+        <xs:element minOccurs="0" name="cuotaInicial" type="xs:decimal"/>
+        <xs:element minOccurs="0" name="tasa" type="xs:decimal"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="ConsultaDecisorResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="ConsultaDecisorResult" nillable="true" type="q1:RespuestaDecisor" xmlns:q1="http://schemas.datacontract.org/2004/07/MAF.SGC.Service.Experian.Models"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+      <con:part>
+        <con:url>http://localhost/MAF.SGC.Service.Experian/Experian.svc?xsd=xsd2</con:url>
+        <con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MAF.SGC.Service.Experian.Models" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/MAF.SGC.Service.Experian.Models">
+  <xs:complexType name="RespuestaDecisor">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Acierta" type="xs:int"/>
+      <xs:element minOccurs="0" name="CausalRechazo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DeudaFinanciera" type="xs:long"/>
+      <xs:element minOccurs="0" name="IngresoDecisor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MontoSugerido" type="xs:long"/>
+      <xs:element minOccurs="0" name="Prioridad" type="xs:int"/>
+      <xs:element minOccurs="0" name="ResultadoDecisor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Score" type="xs:int"/>
+      <xs:element minOccurs="0" name="TasaAnual" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="TasaMensual" type="xs:decimal"/>
+      <xs:element minOccurs="0" name="ZonaRiesgo" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="RespuestaDecisor" nillable="true" type="tns:RespuestaDecisor"/>
+</xs:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+      <con:part>
+        <con:url>http://localhost/MAF.SGC.Service.Experian/Experian.svc?xsd=xsd1</con:url>
+        <con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>http://localhost/MAF.SGC.Service.Experian/Experian.svc</con:endpoint>
+    </con:endpoints>
+    <con:operation id="40ea2cdd-a7c9-4b7c-bb02-3d3d7bf22387" isOneWay="false" action="http://tempuri.org/IExperian/ConsultaDecisor" name="ConsultaDecisor" bindingOperationName="ConsultaDecisor" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="be568e72-cd00-47b0-bd17-dd0e250f33d4" name="Request 1">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://localhost:57043/Experian.svc</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:ConsultaDecisor>\r
+         <tem:tipoDocumento>1</tem:tipoDocumento>\r
+         <tem:numeroDocumento>2555</tem:numeroDocumento>\r
+         <tem:primerApellido>Gaitan</tem:primerApellido>\r
+         <tem:edad>30</tem:edad>\r
+         <tem:numeroPersonasCargo>3</tem:numeroPersonasCargo>\r
+         <tem:actividadEconomica>2</tem:actividadEconomica>\r
+         <tem:ubicacionResidencial></tem:ubicacionResidencial>\r
+         <tem:departamento>17</tem:departamento>\r
+         <tem:montoSolicitado>59520000</tem:montoSolicitado>\r
+         <tem:plazo>24</tem:plazo>\r
+         <tem:valorVehiculo>89280000</tem:valorVehiculo>\r
+         <tem:cuotaInicial>14880000</tem:cuotaInicial>\r
+         <tem:tasa>0</tem:tasa>\r
+      </tem:ConsultaDecisor>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IExperian/ConsultaDecisor"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    </con:operation>
+  </con:interface>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+</con:soapui-project>

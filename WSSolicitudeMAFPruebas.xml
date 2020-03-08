@@ -1,0 +1,438 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="8a895e41-1327-422f-bded-3db3dd2cf4c6" activeEnvironment="Default" name="WSSolicitudeMAFPruebas" soapui-version="5.5.0" abortOnError="false" runType="SEQUENTIAL" xmlns:con="http://eviware.com/soapui/config">
+  <con:settings/>
+  <con:interface xsi:type="con:WsdlInterface" id="be06b905-127b-4315-81d6-18c3b88bd19f" wsaVersion="NONE" name="BasicHttpBinding_IConsultaSolicitud" type="wsdl" bindingName="{http://tempuri.org/}BasicHttpBinding_IConsultaSolicitud" soapVersion="1_1" anonymous="optional" definition="http://localhost:57043/ConsultaSolicitud.svc?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+    <con:settings/>
+    <con:definitionCache type="TEXT" rootPart="http://localhost:57043/ConsultaSolicitud.svc?wsdl">
+      <con:part>
+        <con:url>http://localhost:57043/ConsultaSolicitud.svc?wsdl</con:url>
+        <con:content><![CDATA[<wsdl:definitions name="ConsultaSolicitud" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:tns="http://tempuri.org/" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://localhost:57043/ConsultaSolicitud.svc?xsd=xsd0" namespace="http://tempuri.org/"/>
+      <xsd:import schemaLocation="http://localhost:57043/ConsultaSolicitud.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/"/>
+      <xsd:import schemaLocation="http://localhost:57043/ConsultaSolicitud.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MAF.SGC.Service.Solicitude"/>
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="IConsultaSolicitud_Get_InputMessage">
+    <wsdl:part name="parameters" element="tns:Get"/>
+  </wsdl:message>
+  <wsdl:message name="IConsultaSolicitud_Get_OutputMessage">
+    <wsdl:part name="parameters" element="tns:GetResponse"/>
+  </wsdl:message>
+  <wsdl:portType name="IConsultaSolicitud">
+    <wsdl:operation name="Get">
+      <wsdl:input wsaw:Action="http://tempuri.org/IConsultaSolicitud/Get" message="tns:IConsultaSolicitud_Get_InputMessage"/>
+      <wsdl:output wsaw:Action="http://tempuri.org/IConsultaSolicitud/GetResponse" message="tns:IConsultaSolicitud_Get_OutputMessage"/>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="BasicHttpBinding_IConsultaSolicitud" type="tns:IConsultaSolicitud">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="Get">
+      <soap:operation soapAction="http://tempuri.org/IConsultaSolicitud/Get" style="document"/>
+      <wsdl:input>
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="ConsultaSolicitud">
+    <wsdl:port name="BasicHttpBinding_IConsultaSolicitud" binding="tns:BasicHttpBinding_IConsultaSolicitud">
+      <soap:address location="http://localhost:57043/ConsultaSolicitud.svc"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content>
+        <con:type>http://schemas.xmlsoap.org/wsdl/</con:type>
+      </con:part>
+      <con:part>
+        <con:url>http://localhost:57043/ConsultaSolicitud.svc?xsd=xsd0</con:url>
+        <con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tempuri.org/">
+  <xs:import schemaLocation="http://localhost:57043/ConsultaSolicitud.svc?xsd=xsd2" namespace="http://schemas.datacontract.org/2004/07/MAF.SGC.Service.Solicitude"/>
+  <xs:element name="Get">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="Documento" nillable="true" type="xs:string"/>
+        <xs:element minOccurs="0" name="SolicitudId" type="xs:int"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  <xs:element name="GetResponse">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="0" name="GetResult" nillable="true" type="q1:Solicitud" xmlns:q1="http://schemas.datacontract.org/2004/07/MAF.SGC.Service.Solicitude"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+      <con:part>
+        <con:url>http://localhost:57043/ConsultaSolicitud.svc?xsd=xsd2</con:url>
+        <con:content><![CDATA[<xs:schema elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/MAF.SGC.Service.Solicitude" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.datacontract.org/2004/07/MAF.SGC.Service.Solicitude">
+  <xs:complexType name="Solicitud">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Adicionales" nillable="true" type="tns:Adicionales"/>
+      <xs:element minOccurs="0" name="Cliente" nillable="true" type="tns:Cliente"/>
+      <xs:element minOccurs="0" name="Compromisos" nillable="true" type="tns:ArrayOfCompromisoObligacion"/>
+      <xs:element minOccurs="0" name="Concesionario" nillable="true" type="tns:Concesionario"/>
+      <xs:element minOccurs="0" name="Direcciones" nillable="true" type="tns:ArrayOfDireccion"/>
+      <xs:element minOccurs="0" name="Egresos" nillable="true" type="tns:ArrayOfEgreso"/>
+      <xs:element minOccurs="0" name="Emails" nillable="true" type="tns:ArrayOfEmail"/>
+      <xs:element minOccurs="0" name="EsTransaccionMonedaExtranjera" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="Financiamiento" nillable="true" type="tns:Financiamiento"/>
+      <xs:element minOccurs="0" name="Participantes" nillable="true" type="tns:ArrayOfParticipante"/>
+      <xs:element minOccurs="0" name="Patrimonios" nillable="true" type="tns:ArrayOfPatrimonio"/>
+      <xs:element minOccurs="0" name="ReferenciaFamiliares" nillable="true" type="tns:ArrayOfReferenciaFamiliar"/>
+      <xs:element minOccurs="0" name="ReferenciaPersonales" nillable="true" type="tns:ArrayOfReferenciaPersonal"/>
+      <xs:element minOccurs="0" name="SolicitudId" type="xs:int"/>
+      <xs:element minOccurs="0" name="Subvencion" type="xs:boolean"/>
+      <xs:element minOccurs="0" name="Telefonos" nillable="true" type="tns:ArrayOfTelefono"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Solicitud" nillable="true" type="tns:Solicitud"/>
+  <xs:complexType name="Adicionales">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Color" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaHoraIngreso" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NitComercial" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NorSolicitudFront" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Prioridad" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ResultadoDecisor" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ResultdoFIA" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Adicionales" nillable="true" type="tns:Adicionales"/>
+  <xs:complexType name="Cliente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="ActividadEconomica" nillable="true" type="tns:ActividadEconomica"/>
+      <xs:element minOccurs="0" name="Adicionales" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Comentarios" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Documento" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Edad" type="xs:int"/>
+      <xs:element minOccurs="0" name="EsPEP" type="xs:int"/>
+      <xs:element minOccurs="0" name="EstadoCivil" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Estrato" type="xs:int"/>
+      <xs:element minOccurs="0" name="FechaExpedicion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaNacimiento" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="LugarExpedicion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MedioCorrespondencia" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="NivelEstudio" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Nombres" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PersonasCargo" type="xs:int"/>
+      <xs:element minOccurs="0" name="PrimerApellido" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Profesion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Referencia" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SegundoApellido" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Sexo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoPersona" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Cliente" nillable="true" type="tns:Cliente"/>
+  <xs:complexType name="ActividadEconomica">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Asalariado" nillable="true" type="tns:Asalariado"/>
+      <xs:element minOccurs="0" name="CodeMaf" type="xs:int"/>
+      <xs:element minOccurs="0" name="Independiente" nillable="true" type="tns:Independiente"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ActividadEconomica" nillable="true" type="tns:ActividadEconomica"/>
+  <xs:complexType name="Asalariado">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Arrendamiento" type="xs:int"/>
+      <xs:element minOccurs="0" name="CargoLaboral" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaFinAno" type="xs:int"/>
+      <xs:element minOccurs="0" name="FechaFinMes" type="xs:int"/>
+      <xs:element minOccurs="0" name="FechaIicioAno" type="xs:int"/>
+      <xs:element minOccurs="0" name="FechaInicioMes" type="xs:int"/>
+      <xs:element minOccurs="0" name="Honorario" type="xs:int"/>
+      <xs:element minOccurs="0" name="Nit" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="OtrosIngresos" type="xs:int"/>
+      <xs:element minOccurs="0" name="RazonSocial" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Sueldo" type="xs:int"/>
+      <xs:element minOccurs="0" name="TotalIngresos" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Asalariado" nillable="true" type="tns:Asalariado"/>
+  <xs:complexType name="Independiente">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CIIU" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoEvaluacion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoIndependiente" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Independiente" nillable="true" type="tns:Independiente"/>
+  <xs:complexType name="ArrayOfCompromisoObligacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="CompromisoObligacion" nillable="true" type="tns:CompromisoObligacion"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfCompromisoObligacion" nillable="true" type="tns:ArrayOfCompromisoObligacion"/>
+  <xs:complexType name="CompromisoObligacion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CoutaMensual" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Entidad" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SaldoActual" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="CompromisoObligacion" nillable="true" type="tns:CompromisoObligacion"/>
+  <xs:complexType name="Concesionario">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ciudad" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="FechaIngreso" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Sucursal" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Vendedor" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Concesionario" nillable="true" type="tns:Concesionario"/>
+  <xs:complexType name="ArrayOfDireccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Direccion" nillable="true" type="tns:Direccion"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfDireccion" nillable="true" type="tns:ArrayOfDireccion"/>
+  <xs:complexType name="Direccion">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Barrio" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Ciudad" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MesesEnResidencia" type="xs:int"/>
+      <xs:element minOccurs="0" name="Municipio" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoVivienda" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Direccion" nillable="true" type="tns:Direccion"/>
+  <xs:complexType name="ArrayOfEgreso">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Egreso" nillable="true" type="tns:Egreso"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEgreso" nillable="true" type="tns:ArrayOfEgreso"/>
+  <xs:complexType name="Egreso">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CuotaHipotecaria" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CuotaOtros" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CuotaTC" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="GastosFamiliares" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TotalEgresos" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Egreso" nillable="true" type="tns:Egreso"/>
+  <xs:complexType name="ArrayOfEmail">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Email" nillable="true" type="tns:Email"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfEmail" nillable="true" type="tns:ArrayOfEmail"/>
+  <xs:complexType name="Email">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Email" nillable="true" type="tns:Email"/>
+  <xs:complexType name="Financiamiento">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="CompaniaAseguradoraDesempleo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CompaniaAseguradoraTodoRiesgo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CompaniaAseguradoraVida" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Condiciones" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="CuotaInicial" type="xs:int"/>
+      <xs:element minOccurs="0" name="FechaPago" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ModificaPrima" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ModificaTasa" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MontoAccesorios" type="xs:int"/>
+      <xs:element minOccurs="0" name="MontoCuota" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="MontoFinanciar" type="xs:int"/>
+      <xs:element minOccurs="0" name="MontoSeguro" type="xs:int"/>
+      <xs:element minOccurs="0" name="PlanCredito" type="xs:int"/>
+      <xs:element minOccurs="0" name="PlazoMeses" type="xs:int"/>
+      <xs:element minOccurs="0" name="PorcentajeCuotaInicial" type="xs:float"/>
+      <xs:element minOccurs="0" name="PrimaAnual" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="PrimaMensual" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RespuestaAcierta" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="RespuestaDataCredito" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Score" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SeguroDesempleo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SeguroTodoRiesgo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="SeguroVida" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TasaMV" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Tier" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TotalFinanciamiento" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="ValorSeguroDesempleo" type="xs:int"/>
+      <xs:element minOccurs="0" name="ValorSeguroTodoRiesgo" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Financiamiento" nillable="true" type="tns:Financiamiento"/>
+  <xs:complexType name="ArrayOfParticipante">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Participante" nillable="true" type="tns:Participante"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfParticipante" nillable="true" type="tns:ArrayOfParticipante"/>
+  <xs:complexType name="Participante">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Documento" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TipoDocumento" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Participante" nillable="true" type="tns:Participante"/>
+  <xs:complexType name="ArrayOfPatrimonio">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Patrimonio" nillable="true" type="tns:Patrimonio"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfPatrimonio" nillable="true" type="tns:ArrayOfPatrimonio"/>
+  <xs:complexType name="Patrimonio">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Descripcion" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Valor" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Patrimonio" nillable="true" type="tns:Patrimonio"/>
+  <xs:complexType name="ArrayOfReferenciaFamiliar">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferenciaFamiliar" nillable="true" type="tns:ReferenciaFamiliar"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReferenciaFamiliar" nillable="true" type="tns:ArrayOfReferenciaFamiliar"/>
+  <xs:complexType name="ReferenciaFamiliar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ciudad" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DireccionResidencia" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Parendesco" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TelefonoCelular" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TelefonoOficina" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TelefonoResidencia" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferenciaFamiliar" nillable="true" type="tns:ReferenciaFamiliar"/>
+  <xs:complexType name="ArrayOfReferenciaPersonal">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="ReferenciaPersonal" nillable="true" type="tns:ReferenciaPersonal"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfReferenciaPersonal" nillable="true" type="tns:ArrayOfReferenciaPersonal"/>
+  <xs:complexType name="ReferenciaPersonal">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Ciudad" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="DireccionResidencia" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Nombre" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TelefonoCelular" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="TelefonoResidencia" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ReferenciaPersonal" nillable="true" type="tns:ReferenciaPersonal"/>
+  <xs:complexType name="ArrayOfTelefono">
+    <xs:sequence>
+      <xs:element minOccurs="0" maxOccurs="unbounded" name="Telefono" nillable="true" type="tns:Telefono"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="ArrayOfTelefono" nillable="true" type="tns:ArrayOfTelefono"/>
+  <xs:complexType name="Telefono">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="Departamento" nillable="true" type="xs:string"/>
+      <xs:element minOccurs="0" name="Descripcion" type="xs:int"/>
+      <xs:element minOccurs="0" name="Extension" type="xs:int"/>
+      <xs:element minOccurs="0" name="Tipo" nillable="true" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="Telefono" nillable="true" type="tns:Telefono"/>
+</xs:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+      <con:part>
+        <con:url>http://localhost:57043/ConsultaSolicitud.svc?xsd=xsd1</con:url>
+        <con:content><![CDATA[<xs:schema attributeFormDefault="qualified" elementFormDefault="qualified" targetNamespace="http://schemas.microsoft.com/2003/10/Serialization/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://schemas.microsoft.com/2003/10/Serialization/">
+  <xs:element name="anyType" nillable="true" type="xs:anyType"/>
+  <xs:element name="anyURI" nillable="true" type="xs:anyURI"/>
+  <xs:element name="base64Binary" nillable="true" type="xs:base64Binary"/>
+  <xs:element name="boolean" nillable="true" type="xs:boolean"/>
+  <xs:element name="byte" nillable="true" type="xs:byte"/>
+  <xs:element name="dateTime" nillable="true" type="xs:dateTime"/>
+  <xs:element name="decimal" nillable="true" type="xs:decimal"/>
+  <xs:element name="double" nillable="true" type="xs:double"/>
+  <xs:element name="float" nillable="true" type="xs:float"/>
+  <xs:element name="int" nillable="true" type="xs:int"/>
+  <xs:element name="long" nillable="true" type="xs:long"/>
+  <xs:element name="QName" nillable="true" type="xs:QName"/>
+  <xs:element name="short" nillable="true" type="xs:short"/>
+  <xs:element name="string" nillable="true" type="xs:string"/>
+  <xs:element name="unsignedByte" nillable="true" type="xs:unsignedByte"/>
+  <xs:element name="unsignedInt" nillable="true" type="xs:unsignedInt"/>
+  <xs:element name="unsignedLong" nillable="true" type="xs:unsignedLong"/>
+  <xs:element name="unsignedShort" nillable="true" type="xs:unsignedShort"/>
+  <xs:element name="char" nillable="true" type="tns:char"/>
+  <xs:simpleType name="char">
+    <xs:restriction base="xs:int"/>
+  </xs:simpleType>
+  <xs:element name="duration" nillable="true" type="tns:duration"/>
+  <xs:simpleType name="duration">
+    <xs:restriction base="xs:duration">
+      <xs:pattern value="\-?P(\d*D)?(T(\d*H)?(\d*M)?(\d*(\.\d*)?S)?)?"/>
+      <xs:minInclusive value="-P10675199DT2H48M5.4775808S"/>
+      <xs:maxInclusive value="P10675199DT2H48M5.4775807S"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:element name="guid" nillable="true" type="tns:guid"/>
+  <xs:simpleType name="guid">
+    <xs:restriction base="xs:string">
+      <xs:pattern value="[\da-fA-F]{8}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{4}-[\da-fA-F]{12}"/>
+    </xs:restriction>
+  </xs:simpleType>
+  <xs:attribute name="FactoryType" type="xs:QName"/>
+  <xs:attribute name="Id" type="xs:ID"/>
+  <xs:attribute name="Ref" type="xs:IDREF"/>
+</xs:schema>]]></con:content>
+        <con:type>http://www.w3.org/2001/XMLSchema</con:type>
+      </con:part>
+    </con:definitionCache>
+    <con:endpoints>
+      <con:endpoint>http://localhost:57043/ConsultaSolicitud.svc</con:endpoint>
+    </con:endpoints>
+    <con:operation id="cb7a16fb-2acc-49bb-ad1f-d8e97d5f73e9" isOneWay="false" action="http://tempuri.org/IConsultaSolicitud/Get" name="Get" bindingOperationName="Get" type="Request-Response" inputName="" receivesAttachments="false" sendsAttachments="false" anonymous="optional">
+      <con:settings/>
+      <con:call id="2b896249-7665-49b7-bc1a-dae81992a140" name="Request 1">
+        <con:settings>
+          <con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting>
+        </con:settings>
+        <con:encoding>UTF-8</con:encoding>
+        <con:endpoint>http://localhost/ServicioExperian/ConsultaSolicitud.svc</con:endpoint>
+        <con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:tem="http://tempuri.org/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <tem:Get>\r
+         <tem:TipoDocumento>171</tem:TipoDocumento>\r
+         <tem:Documento>1069733204</tem:Documento>\r
+         <tem:SolicitudId>90293</tem:SolicitudId>\r
+      </tem:Get>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request>
+        <con:credentials>
+          <con:authType>No Authorization</con:authType>
+        </con:credentials>
+        <con:jmsConfig JMSDeliveryMode="PERSISTENT"/>
+        <con:jmsPropertyConfig/>
+        <con:wsaConfig mustUnderstand="NONE" version="200508" action="http://tempuri.org/IConsultaSolicitud/Get"/>
+        <con:wsrmConfig version="1.2"/>
+      </con:call>
+    </con:operation>
+  </con:interface>
+  <con:properties/>
+  <con:wssContainer/>
+  <con:oAuth2ProfileContainer/>
+  <con:oAuth1ProfileContainer/>
+</con:soapui-project>
